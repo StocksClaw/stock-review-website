@@ -1,0 +1,11 @@
+# robots.txt for 龙虾复盘网站
+# 允许所有搜索引擎爬取
+
+User-agent: *
+Allow: /
+
+# 网站地图
+Sitemap: https://YOUR_USERNAME.github.io/stock-review-website/sitemap.xml
+
+# 爬取延迟（友好爬取）
+Crawl-delay: 1

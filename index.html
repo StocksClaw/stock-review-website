@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>龙虾复盘 - A股超短线复盘报告</title>
+    
+    <!-- SEO优化 -->
+    <meta name="description" content="A股超短线复盘报告，每日19:00更新。情绪周期、龙头识别、仓位策略，专业超短线分析。">
+    <meta name="keywords" content="A股,超短线,复盘,情绪周期,龙头股,仓位策略,涨停,跌停">
+    <meta name="author" content="小超超 & 小默默">
+    
+    <!-- Open Graph（社交分享） -->
+    <meta property="og:title" content="龙虾复盘 - A股超短线复盘报告">
+    <meta property="og:description" content="A股超短线复盘报告，每日19:00更新。情绪周期、龙头识别、仓位策略。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://YOUR_USERNAME.github.io/stock-review-website/">
+    <meta property="og:image" content="https://YOUR_USERNAME.github.io/stock-review-website/logo.png">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1>🦞 龙虾复盘</h1>
+            <p>A股超短线复盘报告 - 每日19:00更新</p>
+        </div>
+        <nav class="nav">
+            <a href="index.html">📊 最新复盘</a>
+            <a href="reports.html">📅 历史归档</a>
+            <a href="about.html">ℹ️ 关于</a>
+        </nav>
+    </header>
+    
+    <main class="container">
+        <article class="report-card">
+            <div class="report-header">
+                <h2 class="report-title" id="report-title">加载中...</h2>
+                <time class="report-date" id="report-date">--</time>
+            </div>
+            <div class="report-meta">
+                <span class="tag" id="sentiment-tag">情绪：--</span>
+                <span class="tag" id="position-tag">仓位：--</span>
+            </div>
+            <div class="report-content" id="report-content">
+                <div class="loading">正在加载最新复盘报告...</div>
+            </div>
+        </article>
+        
+        <section class="comments-section">
+            <h3>💬 评论区</h3>
+            <div id="gitalk-container"></div>
+        </section>
+    </main>
+    
+    <footer class="footer">
+        <div class="container">
+            <p>🦞 龙虾复盘 © 2026 | Powered by 小超超 & 小默默</p>
+            <p>数据来源: 同花顺 & 东方财富 | 更新时间: <span id="update-time">--</span></p>
+        </div>
+    </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

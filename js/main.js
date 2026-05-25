@@ -1,28 +1,22 @@
-// 配置信息（需要替换为真实值）
+// 配置信息
 const CONFIG = {
     // GitHub仓库信息（用于Gitalk评论）
     github: {
-        owner: 'YOUR_GITHUB_USERNAME',  // 替换为你的GitHub用户名
-        repo: 'stock-review-website',    // 替换为你的仓库名
-        clientID: 'YOUR_CLIENT_ID',      // 从GitHub App获取
-        clientSecret: 'YOUR_CLIENT_SECRET' // 从GitHub App获取
+        owner: 'StocksClaw',
+        repo: 'stock-review-website',
+        clientID: '',      // 待配置
+        clientSecret: ''   // 待配置
     },
     // 报告文件列表（手动维护或自动生成）
     reports: [{
-            date: '2026-05-24',
-            title: '龙虾复盘 | 2026.05.24 周五',
-            file: 'reports/2026-05-24.html',
-            sentiment: '未知',
-            position: '至2~3成轻仓，聚焦龙头股机会，积极参与市场热点'
-        },
-        {
             date: '2026-05-22',
             title: '龙虾复盘 | 2026.05.22 周五 主升',
-            file: 'reports/2026-05-22.html',
+            file: 'reports/2026-05-24.html',
             sentiment: '主升',
             position: '2~3成轻仓'
         }
-        // 添加更多报告...]
+        // 添加更多报告...
+    ]
 };
 
 // 加载最新报告
@@ -32,8 +26,8 @@ async function loadLatestReport() {
     // 更新页面信息
     document.getElementById('report-title').textContent = latest.title;
     document.getElementById('report-date').textContent = latest.date;
-    document.getElementById('sentiment-tag').textContent = `情绪：${latest.sentiment}`;
-    document.getElementById('position-tag').textContent = `仓位：${latest.position}`;
+    document.getElementById('sentiment-tag').textContent = '情绪：' + latest.sentiment;
+    document.getElementById('position-tag').textContent = '仓位：' + latest.position;
     document.getElementById('update-time').textContent = new Date().toLocaleString('zh-CN');
     
     // 加载报告内容
@@ -47,35 +41,45 @@ async function loadLatestReport() {
             // 初始化评论系统
             initGitalk(latest.date);
         } else {
-            throw new Error('报告文件不存在');
+            throw new Error('报告文件不存在 (' + response.status + ')');
         }
     } catch (error) {
-        document.getElementById('report-content').innerHTML = `
-            <div style="text-align:center; padding:50px; color:#999;">
-                <h3>📊 报告加载失败</h3>
-                <p>原因：${error.message}</p>
-                <p>请稍后刷新页面重试</p>
-            </div>
-        `;
+        document.getElementById('report-content').innerHTML =
+            '<div style="text-align:center; padding:50px; color:#999;">' +
+            '<h3>📊 报告加载失败</h3>' +
+            '<p>原因：' + error.message + '</p>' +
+            '<p>请稍后刷新页面重试</p>' +
+            '</div>';
     }
 }
 
 // 初始化Gitalk评论系统
 function initGitalk(reportId) {
-    const gitalk = new Gitalk({
-        clientID: CONFIG.github.clientID,
-        clientSecret: CONFIG.github.clientSecret,
-        repo: CONFIG.github.repo,
-        owner: CONFIG.github.owner,
-        admin: [CONFIG.github.owner],
-        id: reportId,      // 每篇报告的唯一标识（用日期）
-        distractionFreeMode: false,
-        title: `复盘报告 ${reportId}`,
-        body: `自动创建于 ${new Date().toLocaleString('zh-CN')}`,
-        labels: ['复盘报告', reportId]
-    });
-    
-    gitalk.render('gitalk-container');
+    // 评论系统未配置时跳过
+    if (!CONFIG.github.clientID || !CONFIG.github.clientSecret) {
+        document.getElementById('gitalk-container').innerHTML =
+            '<p style="text-align:center;color:#999;padding:20px;">💬 评论系统配置中，敬请期待...</p>';
+        return;
+    }
+    try {
+        var gitalk = new Gitalk({
+            clientID: CONFIG.github.clientID,
+            clientSecret: CONFIG.github.clientSecret,
+            repo: CONFIG.github.repo,
+            owner: CONFIG.github.owner,
+            admin: [CONFIG.github.owner],
+            id: reportId,
+            distractionFreeMode: false,
+            title: '复盘报告 ' + reportId,
+            body: '自动创建于 ' + new Date().toLocaleString('zh-CN'),
+            labels: ['复盘报告', reportId]
+        });
+        gitalk.render('gitalk-container');
+    } catch (error) {
+        console.error('Gitalk初始化失败:', error);
+        document.getElementById('gitalk-container').innerHTML =
+            '<p style="text-align:center;color:#999;padding:20px;">💬 评论系统配置中，敬请期待...</p>';
+    }
 }
 
 // 页面加载完成后执行

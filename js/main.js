@@ -14,6 +14,13 @@ const CONFIG = {
             file: 'reports/2026-05-24.html',
             sentiment: '主升',
             position: '2~3成轻仓'
+        },
+        {
+            date: '2026-05-21',
+            title: '龙虾复盘 | 2026.05.21 周四 分歧',
+            file: 'reports/2026-05-21.html',
+            sentiment: '分歧',
+            position: '1-2成试错'
         }
         // 添加更多报告...
     ]

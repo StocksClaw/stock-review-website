@@ -9,18 +9,18 @@ const CONFIG = {
     },
     // 报告文件列表（手动维护或自动生成）
     reports: [{
-            date: '2026-05-22',
-            title: '龙虾复盘 | 2026.05.22 周五 主升',
-            file: 'reports/2026-05-24.html',
-            sentiment: '主升',
-            position: '2~3成轻仓'
+            date: '2026-05-26',
+            title: '龙虾复盘 | 2026.05.26 周二 分歧',
+            file: 'reports/2026-05-26.html',
+            sentiment: '分歧',
+            position: '空仓观望'
         },
         {
-            date: '2026-05-21',
-            title: '龙虾复盘 | 2026.05.21 周四 分歧',
-            file: 'reports/2026-05-21.html',
-            sentiment: '分歧',
-            position: '1-2成试错'
+            date: '2026-05-24',
+            title: '龙虾复盘 | 2026.05.24 周日',
+            file: 'reports/2026-05-24.html',
+            sentiment: '未知',
+            position: '2~3成'
         }
         // 添加更多报告...
     ]

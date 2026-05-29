@@ -1,28 +1,39 @@
 // 配置信息
 const CONFIG = {
     // GitHub仓库信息（用于Gitalk评论）
+    // 配置步骤: https://github.com/settings/developers → New OAuth App
+    //   Application name: 龙虾复盘
+    //   Homepage URL: https://StocksClaw.github.io/stock-review-website/
+    //   Callback URL: https://StocksClaw.github.io/stock-review-website/
+    // 创建后填入 clientID 和 clientSecret
     github: {
         owner: 'StocksClaw',
         repo: 'stock-review-website',
-        clientID: '',      // 待配置
-        clientSecret: ''   // 待配置
+        clientID: '',      // 待虎哥配置
+        clientSecret: ''   // 待虎哥配置
     },
     // 报告文件列表（手动维护或自动生成）
     reports: [{
             date: '2026-05-26',
-            title: '龙虾复盘 | 2026.05.26 周二 分歧',
+            title: '龙虾复盘 | 2026.05.26 周一 退潮',
             file: 'reports/2026-05-26.html',
-            sentiment: '分歧',
-            position: '空仓观望'
+            sentiment: '退潮',
+            position: '清仓'
+        },
+        {
+            date: '2026-05-25',
+            title: '龙虾复盘 | 2026.05.25 周日 主升',
+            file: 'reports/2026-05-25.html',
+            sentiment: '主升',
+            position: '3~5成'
         },
         {
             date: '2026-05-24',
-            title: '龙虾复盘 | 2026.05.24 周日',
+            title: '龙虾复盘 | 2026.05.24 周六',
             file: 'reports/2026-05-24.html',
-            sentiment: '未知',
-            position: '2~3成'
+            sentiment: '--',
+            position: '--'
         }
-        // 添加更多报告...
     ]
 };
 

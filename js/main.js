@@ -14,6 +14,13 @@ const CONFIG = {
     },
     // 报告文件列表（手动维护或自动生成）
     reports: [{
+            date: '2026-05-29',
+            title: '龙虾复盘 | 2026.05.29 周五 分歧',
+            file: 'reports/2026-05-29.html',
+            sentiment: '分歧',
+            position: '1~2成试错'
+        },
+        {
             date: '2026-05-28',
             title: '龙虾复盘 | 2026.05.28 周三 试盘',
             file: 'reports/2026-05-28.html',

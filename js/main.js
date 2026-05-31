@@ -36,10 +36,10 @@ const CONFIG = {
         },
         {
             date: '2026-05-25',
-            title: '龙虾复盘 | 2026.05.25 周一 主升',
+            title: '龙虾复盘 | 2026.05.25 周一 弱修复',
             file: 'reports/2026-05-25.html',
-            sentiment: '主升',
-            position: '3~5成'
+            sentiment: '弱修复',
+            position: '1~2成试错'
         },
         {
             date: '2026-05-22',

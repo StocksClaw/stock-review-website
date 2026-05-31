@@ -22,31 +22,31 @@ const CONFIG = {
         },
         {
             date: '2026-05-28',
-            title: '龙虾复盘 | 2026.05.28 周三 试盘',
+            title: '龙虾复盘 | 2026.05.28 周四 试盘',
             file: 'reports/2026-05-28.html',
             sentiment: '试盘',
             position: '2~3成试错'
         },
         {
             date: '2026-05-26',
-            title: '龙虾复盘 | 2026.05.26 周一 退潮',
+            title: '龙虾复盘 | 2026.05.26 周二 退潮',
             file: 'reports/2026-05-26.html',
             sentiment: '退潮',
             position: '清仓'
         },
         {
             date: '2026-05-25',
-            title: '龙虾复盘 | 2026.05.25 周日 主升',
+            title: '龙虾复盘 | 2026.05.25 周一 主升',
             file: 'reports/2026-05-25.html',
             sentiment: '主升',
             position: '3~5成'
         },
         {
-            date: '2026-05-24',
-            title: '龙虾复盘 | 2026.05.24 周六',
+            date: '2026-05-22',
+            title: '龙虾复盘 | 2026.05.22 周五 主升',
             file: 'reports/2026-05-24.html',
-            sentiment: '--',
-            position: '--'
+            sentiment: '主升',
+            position: '3~5成'
         }
     ]
 };

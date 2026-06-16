@@ -13,7 +13,8 @@ const CONFIG = {
         clientSecret: ''   // 待虎哥配置
     },
     // 报告文件列表（手动维护或自动生成）
-    reports: [{
+    reports: [
+        { date: "2026-06-16", title: "周二 主升 · 涨停117 跌停7 最高4板", zt: 117, dt: 7, maxBan: 4, lianban: 29, zhaban: "49.6%", sentiment: "主升", position: "4~6成参与", mainLine: "元件" },{
             date: '2026-06-01',
             title: '龙虾复盘 | 2026.06.01 周一 退潮',
             file: 'reports/2026-06-01.html',

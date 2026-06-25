@@ -13,7 +13,13 @@ const CONFIG = {
         clientSecret: ''   // 待虎哥配置
     },
     // 报告文件列表（手动维护或自动生成）
-    reports: [
+    reports: [        {
+            date: '2026-06-25',
+            title: '龙虾复盘 | 2026.06.25 周四 弱修复',
+            file: 'reports/2026-06-25.html',
+            sentiment: '弱修复',
+            position: '1-2成试错'
+        },
         { date: "2026-06-16", title: "周二 主升 · 涨停117 跌停7 最高4板", zt: 117, dt: 7, maxBan: 4, lianban: 29, zhaban: "49.6%", sentiment: "主升", position: "4~6成参与", mainLine: "元件" },{
             date: '2026-06-01',
             title: '龙虾复盘 | 2026.06.01 周一 退潮',
@@ -55,8 +61,7 @@ const CONFIG = {
             file: 'reports/2026-05-24.html',
             sentiment: '主升',
             position: '3~5成'
-        }
-    ]
+        }]
 };
 
 // 加载最新报告

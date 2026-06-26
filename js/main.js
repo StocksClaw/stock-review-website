@@ -13,7 +13,15 @@ const CONFIG = {
         clientSecret: ''   // 待虎哥配置
     },
     // 报告文件列表（手动维护或自动生成）
-    reports: [        {
+    reports: [
+        {
+            date: '2026-06-26',
+            title: '龙虾复盘 | 2026.06.26 周五 强分歧',
+            file: 'reports/2026-06-26.html',
+            sentiment: '强分歧',
+            position: '1-2成试错'
+        },
+        {
             date: '2026-06-25',
             title: '龙虾复盘 | 2026.06.25 周四 弱修复',
             file: 'reports/2026-06-25.html',
